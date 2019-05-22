@@ -1,0 +1,80 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jessica Younker"
+    },
+    {
+      "id": 2,
+      "name": "Jordan Nelson"
+    },
+    {
+      "id": 3,
+      "name": "Zoe LeBlanc"
+    },
+    {
+      "id": 4,
+      "name": "Blaise Roberts"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "animals": [
+    {
+      "id": 3,
+      "name": "Angus",
+      "type": "cat"
+    },
+    {
+      "id": 4,
+      "name": "Henley",
+      "type": "ferret"
+    },
+    {
+      "id": 5,
+      "name": "Derkins",
+      "type": "hedgehog"
+    },
+    {
+      "id": 6,
+      "name": "Checkers",
+      "type": "snake"
+    }
+  ],
+  "owners": [
+    {
+      "id": 3,
+      "name": "Brittany March",
+      "animalId": "3",
+      "phoneNumber": "615-823-8443"
+    },
+    {
+      "id": 4,
+      "name": "Agatha Wright",
+      "animalId": "4",
+      "phoneNumber": "615-823-8443"
+    },
+    {
+      "id": 5,
+      "name": "Nelson Randallson",
+      "animalId": "5",
+      "phoneNumber": "615-823-8443"
+    },
+    {
+      "id": 6,
+      "name": "Penelope May",
+      "animalId": "6",
+      "phoneNumber": "615-823-8443"
+    }
+  ]
+}

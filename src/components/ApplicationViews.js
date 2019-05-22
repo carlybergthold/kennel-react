@@ -9,6 +9,8 @@ import LocationManager from "../modules/LocationManager"
 import SearchResults from './nav/SearchResults';
 import Animal from './kennel/AnimalDetail';
 import { withRouter } from 'react-router'
+import EmployeeDetail from './employee/EmployeeDetail';
+import LocationDetail from './kennel/LocationDetail';
 
 
 class ApplicationViews extends Component {
@@ -27,6 +29,17 @@ class ApplicationViews extends Component {
         .then(animals => {newState.animals = animals})
         .then(() => {
             this.props.history.push("/animals")
+            this.setState(newState)
+        })
+    }
+
+    deleteEmployee = (id) => {
+        let newState = {}
+        EmployeeManager.deleteEmployee(id)
+        .then(EmployeeManager.getAll)
+        .then(employees => {newState.employees = employees})
+        .then(() => {
+            this.props.history.push("/employees")
             this.setState(newState)
         })
     }
@@ -54,12 +67,13 @@ class ApplicationViews extends Component {
                     return <AnimalList animals={this.state.animals} owners={this.state.owners}
                                                             deleteAnimal={this.deleteAnimal} />
                 }} />
-                <Route path="/employees" render={(props) => {
+                <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
                 }} />
                 <Route path="/search" render={(props) => {
                     return <SearchResults />
                 }} />
+
                 <Route path="/animals/:animalId(\d+)" render={(props) => {
                 // Find the animal with the id of the route parameter
                 let animal = this.state.animals.find(animal =>
@@ -71,6 +85,28 @@ class ApplicationViews extends Component {
                 }
                 return <Animal animal={ animal }
                     deleteAnimal={ this.deleteAnimal } />
+                }} />
+
+                <Route path="/employees/:employeeId(\d+)" render={(props) => {
+                // Find the animal with the id of the route parameter
+                let employee = this.state.employees.find(employee =>
+                    employee.id === parseInt(props.match.params.employeeId)
+                )
+                if (!employee) {
+                    employee = {id:404, name: "Employee not found"}
+                }
+                return <EmployeeDetail employee={ employee }
+                            deleteEmployee={ this.deleteEmployee } />
+               }} />
+
+                <Route path="/locations/:locationId(\d+)" render={(props) => {
+                let location = this.state.locations.find(location =>
+                    location.id === parseInt(props.match.params.locationId)
+                )
+                if (!location) {
+                    location = {id:404, name: "Location not found"}
+                }
+                return <LocationDetail location={ location } />
                 }} />
             </>
         )

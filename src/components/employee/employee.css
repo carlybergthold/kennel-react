@@ -1,0 +1,9 @@
+.icon--employee {
+    width: 4rem;
+    height: 4rem;
+}
+
+.employees-container {
+    display: flex;
+    flex-flow: row wrap;
+}

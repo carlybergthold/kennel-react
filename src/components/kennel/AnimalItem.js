@@ -22,8 +22,6 @@ class AnimalItem extends Component {
                 <Link className="see-animal-link" to={`/animals/${this.props.animal.id}`}>More About {this.props.animal.name}</Link>
                 <button className="delete-animal-btn" key={this.props.animal.id} onClick={() => this.setState({saveDisabled: true}, this.handleClick)}
                 disabled={this.state.saveDisabled}>Delete</button>
-            
-                {/* <button onClick={}>Details</button> */}
             </article>
         )
     }

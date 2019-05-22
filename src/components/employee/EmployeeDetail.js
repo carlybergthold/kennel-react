@@ -1,26 +1,25 @@
 import React, { Component } from "react"
-import "./Animal.css"
-import dog from "./dog.png"
+import "./employee.css"
+import employee from "./employee.png"
 
 
-export default class Animal extends Component {
+export default class EmployeeDetail extends Component {
     state = {
         saveDisabled: false
     }
 
     render() {
         return (
-            <section className="animal">
-                <div key={ this.props.animal.id } className="card">
-                    <div className="card-body">
-                        <img src={ dog } className="icon--dog" />
-                        <h4 className="card-title">{ this.props.animal.name }</h4>
-                        <h6 className="card-type">{ this.props.animal.type }</h6>
+            <section className="employee">
+                <div key={ this.props.employee.id } className="card">
+                    <div className="card-body employee-article">
+                        <img src={ employee } className="icon--employee" />
+                        <h4 className="card-title">{ this.props.employee.name }</h4>
                         <button onClick={
                                 () => {
                                     this.setState(
                                         { saveDisabled: true },
-                                        () => this.props.deleteAnimal(this.props.animal.id)
+                                        () => this.props.deleteEmployee(this.props.employee.id)
                                     )
                                 }
                             }

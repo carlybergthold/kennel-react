@@ -9,9 +9,10 @@ export default class LocationList extends Component {
         return (
             <div>
                 <h1>Locations</h1>
+                <section className="location-list">
                 {
                     this.props.locations.map(location => (
-                    <section key={location.id} className="card-body">
+                    <section key={location.id} className="location-card">
                         <img src={ locationImg } className="icon--location" />
                         <h3>{location.name}</h3>
                         <p>{location.address}</p>
@@ -19,6 +20,7 @@ export default class LocationList extends Component {
                     </section>
                 ))
                 }
+                </section>
             </div>
         );
     }

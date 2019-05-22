@@ -4,6 +4,7 @@ import './Animal.css'
 import { Link } from "react-router-dom";
 
 
+
 class AnimalItem extends Component {
 
     handleClick = (event) => {

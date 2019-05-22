@@ -44,11 +44,6 @@
       "id": 5,
       "name": "Derkins",
       "type": "hedgehog"
-    },
-    {
-      "id": 6,
-      "name": "Checkers",
-      "type": "snake"
     }
   ],
   "owners": [
@@ -68,12 +63,6 @@
       "id": 5,
       "name": "Nelson Randallson",
       "animalId": "5",
-      "phoneNumber": "615-823-8443"
-    },
-    {
-      "id": 6,
-      "name": "Penelope May",
-      "animalId": "6",
       "phoneNumber": "615-823-8443"
     }
   ]

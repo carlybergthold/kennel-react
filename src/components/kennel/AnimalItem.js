@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dog from './dog.png'
 import './Animal.css'
-import Animal from './AnimalDetail';
+import { Link } from "react-router-dom";
 
 
 class AnimalItem extends Component {
@@ -19,8 +19,10 @@ class AnimalItem extends Component {
             <article key={this.props.animal.id} className="animal--article">
                 <img src={dog} className="icon--dog" />
                 <h3>{this.props.animal.name}</h3>
-                <button key={this.props.animal.id} onClick={() => this.setState({saveDisabled: true}, this.handleClick)}
+                <Link className="see-animal-link" to={`/animals/${this.props.animal.id}`}>More About {this.props.animal.name}</Link>
+                <button className="delete-animal-btn" key={this.props.animal.id} onClick={() => this.setState({saveDisabled: true}, this.handleClick)}
                 disabled={this.state.saveDisabled}>Delete</button>
+            
                 {/* <button onClick={}>Details</button> */}
             </article>
         )

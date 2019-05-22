@@ -31,14 +31,19 @@
   ],
   "animals": [
     {
+      "id": 2,
+      "name": "Derkins",
+      "type": "hedgehog"
+    },
+    {
       "id": 3,
-      "name": "Angus",
-      "type": "cat"
+      "name": "Derkins",
+      "type": "hedgehog"
     },
     {
       "id": 4,
-      "name": "Henley",
-      "type": "ferret"
+      "name": "Derkins",
+      "type": "hedgehog"
     },
     {
       "id": 5,
@@ -47,18 +52,6 @@
     }
   ],
   "owners": [
-    {
-      "id": 3,
-      "name": "Brittany March",
-      "animalId": "3",
-      "phoneNumber": "615-823-8443"
-    },
-    {
-      "id": 4,
-      "name": "Agatha Wright",
-      "animalId": "4",
-      "phoneNumber": "615-823-8443"
-    },
     {
       "id": 5,
       "name": "Nelson Randallson",

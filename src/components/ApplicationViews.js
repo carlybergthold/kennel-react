@@ -7,6 +7,8 @@ import AnimalManager from "../modules/AnimalManager"
 import EmployeeManager from "../modules/EmployeeManager"
 import LocationManager from "../modules/LocationManager"
 import SearchResults from './nav/SearchResults';
+import Animal from './kennel/AnimalDetail';
+import { withRouter } from 'react-router'
 
 
 class ApplicationViews extends Component {
@@ -22,8 +24,11 @@ class ApplicationViews extends Component {
         let newState = {}
         AnimalManager.deleteAnimal(id)
         .then(AnimalManager.getAll)
-        .then(animals => newState.animals = animals)
-        .then(() => this.setState(newState))
+        .then(animals => {newState.animals = animals})
+        .then(() => {
+            this.props.history.push("/animals")
+            this.setState(newState)
+        })
     }
 
     componentDidMount() {
@@ -45,7 +50,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/" render={(props) => {
                     return <LocationList locations={this.state.locations} />
                 }} />
-                <Route path="/animals" render={(props) => {
+                <Route exact path="/animals" render={(props) => {
                     return <AnimalList animals={this.state.animals} owners={this.state.owners}
                                                             deleteAnimal={this.deleteAnimal} />
                 }} />
@@ -55,10 +60,21 @@ class ApplicationViews extends Component {
                 <Route path="/search" render={(props) => {
                     return <SearchResults />
                 }} />
+                <Route path="/animals/:animalId(\d+)" render={(props) => {
+                // Find the animal with the id of the route parameter
+                let animal = this.state.animals.find(animal =>
+                    animal.id === parseInt(props.match.params.animalId)
+                )
+                // If the animal wasn't found, create a default one
+                if (!animal) {
+                    animal = {id:404, name:"404", breed: "Dog not found"}
+                }
+                return <Animal animal={ animal }
+                    deleteAnimal={ this.deleteAnimal } />
+                }} />
             </>
         )
     }
 }
 
-export default ApplicationViews
-
+export default withRouter(ApplicationViews)

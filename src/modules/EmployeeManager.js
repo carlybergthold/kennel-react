@@ -6,5 +6,11 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/employees`).then(e => e.json())
+  },
+  deleteEmployee(id) {
+    return fetch(`${remoteURL}/employees/${id}`, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
+    }).then(e => e.json())
   }
 }

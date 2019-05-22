@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import locationImg from './location.svg'
+import { Link } from 'react-router-dom';
+
+
 
 export default class LocationList extends Component {
     render() {
@@ -7,9 +11,11 @@ export default class LocationList extends Component {
                 <h1>Locations</h1>
                 {
                     this.props.locations.map(location => (
-                    <section key={location.id}>
+                    <section key={location.id} className="card-body">
+                        <img src={ locationImg } className="icon--location" />
                         <h3>{location.name}</h3>
                         <p>{location.address}</p>
+                        <Link className="see-location-link" to={`/locations/${location.id}`}>More About {location.name}</Link>
                     </section>
                 ))
                 }

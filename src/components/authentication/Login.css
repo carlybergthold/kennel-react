@@ -1,0 +1,13 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+    padding: 3rem;
+    width: 50%;
+    margin-top: 2rem;
+}

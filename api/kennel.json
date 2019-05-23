@@ -31,31 +31,47 @@
   ],
   "animals": [
     {
-      "id": 2,
-      "name": "Derkins",
-      "type": "hedgehog"
-    },
-    {
       "id": 3,
       "name": "Derkins",
-      "type": "hedgehog"
+      "type": "hedgehog",
+      "employeeId": 3
     },
     {
       "id": 4,
-      "name": "Derkins",
-      "type": "hedgehog"
+      "name": "Lionel",
+      "type": "hedgehog",
+      "employeeId": 2
     },
     {
-      "id": 5,
-      "name": "Derkins",
-      "type": "hedgehog"
+      "name": "Python",
+      "type": "mouse",
+      "employeeId": 3,
+      "id": 6
+    },
+    {
+      "name": "Francesca",
+      "type": "rattlesnake",
+      "employeeId": 1,
+      "id": 7
     }
   ],
   "owners": [
     {
+      "id": 4,
+      "name": "Nelson Brown",
+      "animalId": 4,
+      "phoneNumber": "615-823-8443"
+    },
+    {
       "id": 5,
-      "name": "Nelson Randallson",
-      "animalId": "5",
+      "name": "Nelson Ploople",
+      "animalId": 5,
+      "phoneNumber": "615-823-8443"
+    },
+    {
+      "id": 6,
+      "name": "Nelson Wrad",
+      "animalId": 6,
       "phoneNumber": "615-823-8443"
     }
   ]

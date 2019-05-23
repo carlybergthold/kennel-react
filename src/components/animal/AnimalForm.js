@@ -34,7 +34,6 @@ export default class AnimalForm extends Component {
       // Create the animal and redirect user to animal list
       this.props
         .addAnimal(animal)
-        .then(() => this.props.history.push("/animals"));
     }
   };
 

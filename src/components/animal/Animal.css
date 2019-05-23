@@ -21,6 +21,7 @@
 .allAnimals {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .card-body {
@@ -34,12 +35,12 @@
     /* box-shadow: 5px 6px #bebebe; */
 }
 
-.delete-animal-btn {
-    margin: 1rem;
+.animalButton {
+    margin-left: 10rem;
 }
 
-.animalButton {
+.animal-buttons {
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 0 10px 0;
-  }
+    flex-flow: row nowrap;
+    align-content: space-between;
+}

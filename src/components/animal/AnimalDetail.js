@@ -13,9 +13,10 @@ export default class Animal extends Component {
             <section className="animal">
                 <div key={ this.props.animal.id } className="card">
                     <div className="card-body">
-                        <img src={ dog } className="icon--dog" />
+                        <img src={ dog } className="icon--dog" alt="dog"/>
                         <h4 className="card-title">{ this.props.animal.name }</h4>
                         <h6 className="card-type">{ this.props.animal.type }</h6>
+                        <h6 className="card-owner">Caretaker:&nbsp;{ this.props.employees.find(employee => employee.id === this.props.animal.employeeId).name }</h6>
                         <button onClick={
                                 () => {
                                     this.setState(
@@ -24,8 +25,8 @@ export default class Animal extends Component {
                                     )
                                 }
                             }
-                            disabled={ this.state.saveDisabled }
-                            className="card-link">Delete</button>
+                        disabled={ this.state.saveDisabled }
+                        className="card-link">Delete</button>
                     </div>
                 </div>
             </section>

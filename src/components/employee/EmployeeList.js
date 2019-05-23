@@ -14,7 +14,7 @@ class EmployeeList extends Component {
             {
                 this.props.employees.map(employee =>
                     <div className="card-body employee-article" key={employee.id}>
-                        <img src={ employeeImg } className="icon--employee" />
+                        <img src={ employeeImg } className="icon--employee" alt="employee"/>
                         <h3>{employee.name}</h3>
                         <Link className="see-employee-link" to={`/employees/${employee.id}`}>More About {employee.name}</Link>
                     </div>
